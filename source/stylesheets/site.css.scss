@@ -14,3 +14,42 @@ div.hero {
   padding-top: 1rem;
   background: $panda-primary;
 }
+
+section.feature {
+  max-width: 100%;
+  padding: 0;
+  background: #f4f4f4;
+  @include breakpoint(break-1) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  &.flip {
+    @include breakpoint(break-1) {
+      flex-direction: row-reverse;
+    }
+  }
+  div.screenshot {
+    padding: 2rem 1rem 0 1rem;
+    @include breakpoint(break-1) {
+      width: 50%;
+    }
+    background: $panda-primary;
+    img {
+      display: block;
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+  div.summary-container {
+    padding: 1rem;
+    @include breakpoint(break-1) {
+      width: 50%;
+    }
+    div.summary {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
