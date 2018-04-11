@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+ruby "~> 2.4.2"
+
+gem 'rake'
+gem 'puma'
+gem 'rack-contrib'
+
 gem 'middleman', '~> 4.2'
 gem 'middleman-autoprefixer', '~> 2.7'
 gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
