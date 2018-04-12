@@ -2,6 +2,8 @@
 
 $panda-primary: #EEF4CA;
 $panda-secondary: #CACBF4;
+$panda-highlight: #F4CAEF;
+$light-grey: #F4F4F4;
 $dark-grey: #6E6E6E;
 $button-primary: #428C50;
 $button-hover: #3DA450;
@@ -65,7 +67,7 @@ form {
 section.feature {
   max-width: 100%;
   padding: 0;
-  background: #f4f4f4;
+  background: $light-grey;
   @include breakpoint(break-1) {
     display: flex;
     flex-direction: row;
@@ -82,16 +84,36 @@ section.feature {
     @include breakpoint(break-1) {
       width: 50%;
     }
-    background: $panda-primary;
     img {
       display: block;
       width: 50%;
       margin: 0 auto;
     }
+    &.first {
+      background: linear-gradient($light-grey 20%, $panda-primary 70%);
+      @include breakpoint(break-1) {
+        background: $panda-primary;
+      }
+    }
+    &.second {
+      background: linear-gradient($light-grey 20%, $panda-highlight 70%);
+      @include breakpoint(break-1) {
+        background: $panda-highlight;
+      }
+    }
+    &.third {
+      background: linear-gradient($light-grey 20%, $panda-secondary 70%);
+      @include breakpoint(break-1) {
+        background: $panda-secondary;
+      }
+    }
   }
   div.summary-container {
-    padding: 1rem;
+    @include breakpoint(break-0) {
+      padding: 3rem 1rem 1rem 1rem;
+    }
     @include breakpoint(break-1) {
+      padding: 1rem;
       width: 50%;
     }
     div.summary {
