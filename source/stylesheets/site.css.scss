@@ -1,6 +1,10 @@
 @import "sassline-base";
 
 $panda-primary: #EEF4CA;
+$dark-grey: #6E6E6E;
+$button-primary: #428C50;
+$button-hover: #3DA450;
+
 
 section {
   margin: 0 auto;
@@ -13,6 +17,48 @@ section {
 div.hero {
   padding-top: 1rem;
   background: $panda-primary;
+}
+
+form {
+  label {
+    margin-bottom: 1rem;
+    @include sassline(delta, $headingtype, 2, 1, all);
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    @include breakpoint(break-1) {
+      width: 70%;
+    }
+    input[type="email"] {
+      font-size: 1em;
+      padding: 1rem 1rem;
+      margin-right: 1rem;
+      flex: 1;
+      border: 1px solid $dark-grey;
+    }
+    input[type="submit"] {
+      font-size: 1em;
+      display: inline-block;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      border: 0;
+      background-color: $button-primary;
+      color: #ffffff;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4), $dark-grey 0px 0px 1px inset;
+      transition: all 0.15s linear;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background: $button-hover;
+        border: 0;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.5), #505050 0px 0px 1px inset;
+      }
+    }
+  }
+
 }
 
 section.feature {
