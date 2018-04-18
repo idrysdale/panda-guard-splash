@@ -12,3 +12,8 @@ activate :directory_indexes
 
 # Append hashes to compiled assets
 activate :asset_hash
+
+activate :deploy do |deploy|
+  deploy.deploy_method = :git
+  deploy.branch   = 'production'
+end
